@@ -1,0 +1,63 @@
+Now lets create a component for display the users from the store.
+ChatGPT
+Certainly! To display the users from the Redux store, you can create a new React component that uses the useSelector hook to access the state. Below is an example of how to create a component to display the list of users.
+
+Create a file named UserList.js:
+
+javascript
+Copy code
+// UserList.js
+
+import React from 'react';
+import { useSelector } from 'react-redux';
+
+const UserList = () => {
+  // Access the users from the Redux store
+  const users = useSelector((state) => state.user.users);
+
+  return (
+    <div>
+      <h2>User List</h2>
+      {users.length === 0 ? (
+        <p>No users available.</p>
+      ) : (
+        <ul>
+          {users.map((user, index) => (
+            <li key={index}>
+              {user.firstName} {user.lastName} - {user.email} <br />
+              Message: {user.message}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default UserList;
+Integrate the UserList Component into the App
+Now, you can include this UserList component in your main App.js file to display the list of users.
+
+Update your App.js:
+
+javascript
+Copy code
+// App.js
+
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import UserForm from './UserForm';
+import UserList from './UserList';
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <UserForm />
+      <UserList />
+    </Provider>
+  );
+};
+
+export default App;
+With this setup, the UserForm component allows users to enter their details and save them to the Redux store. The UserList component displays the list of users stored in the Redux store.

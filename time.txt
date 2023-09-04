@@ -1,3 +1,4 @@
 Infrastructure setup - 17:30
 Initial setup - 10:00
 Setup the form - 12:00
+Display values - 3:00
