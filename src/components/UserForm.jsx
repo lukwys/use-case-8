@@ -71,9 +71,10 @@ export const UserForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>First Name</label>
+        <label htmlFor="firstName">First Name</label>
         <input
           type="text"
+          id="firstName"
           name="firstName"
           value={formData.firstName}
           onChange={handleChange}
@@ -81,9 +82,10 @@ export const UserForm = () => {
         <span>{formErrors.firstName}</span>
       </div>
       <div>
-        <label>Last Name</label>
+        <label htmlFor="lastName">Last Name</label>
         <input
           type="text"
+          id="lastName"
           name="lastName"
           value={formData.lastName}
           onChange={handleChange}
@@ -91,9 +93,10 @@ export const UserForm = () => {
         <span>{formErrors.lastName}</span>
       </div>
       <div>
-        <label>Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
+          id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
@@ -101,8 +104,9 @@ export const UserForm = () => {
         <span>{formErrors.email}</span>
       </div>
       <div>
-        <label>Message</label>
+        <label htmlFor="message">Message</label>
         <textarea
+          id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
